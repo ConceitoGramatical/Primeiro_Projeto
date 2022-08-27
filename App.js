@@ -2,12 +2,28 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default function App() {
-	const [valor1, setValor1] = useState("1");
-	const [valor2, setValor2] = useState("1000");
+	const [valor1, setValor1] = useState("20");
+	const [valor2, setValor2] = useState("3");
 	const [resultado, setResultado] = useState("");
 		function somar(){
 			let r = parseFloat(valor1) + parseFloat(valor2);
 			setResultado(r);
+		}
+		function subtração(){
+			let s = parseFloat(valor1) - parseFloat(valor2);
+			setResultado(s);
+		}
+		function multiplicação(){
+			let m = parseFloat(valor1) * parseFloat(valor2);
+			setResultado(m);
+		}
+		function divisão(){
+			let d = parseFloat(valor1) / parseFloat(valor2);
+			setResultado(d);
+		}
+		function exponenciação(){
+			let e = Math.pow(parseFloat(valor1), parseFloat(valor2));
+			setResultado(e);
 		}
 	//Form f = new form();->instancia
   return (
@@ -27,6 +43,30 @@ export default function App() {
 		  	  <TouchableOpacity style={styles.botao}
 				  onPress={somar}>
 			  	<Text styles={styles.textoBotao}>SOMAR</Text>
+			  </TouchableOpacity>
+		  </View>
+		  <View style={styles.bloco}>
+		  		<TouchableOpacity style={styles.botao}
+				  onPress={subtração}>
+				<Text styles={styles.textoBotao}>SUBTRAÇÃO</Text>
+			  </TouchableOpacity>
+		  </View>
+		   <View style={styles.bloco}>
+		  		<TouchableOpacity style={styles.botao}
+				  onPress={multiplicação}>
+				<Text styles={styles.textoBotao}>MULTIPLICAÇÃO</Text>
+			  </TouchableOpacity>
+		  </View>
+		   <View style={styles.bloco}>
+		  		<TouchableOpacity style={styles.botao}
+				  onPress={divisão}>
+				<Text styles={styles.textoBotao}>DIVISÃO</Text>
+			  </TouchableOpacity>
+		  </View>
+		   <View style={styles.bloco}>
+		  		<TouchableOpacity style={styles.botao}
+				  onPress={exponenciação}>
+				<Text styles={styles.textoBotao}>EXPONENCIAÇÃO</Text>
 			  </TouchableOpacity>
 		  </View>
 		  <View style={styles.bloco}>
